@@ -93,10 +93,6 @@ public class MainActivityFragment extends Fragment implements OnTaskCompleted {
         launchActivity();
     }
 
-    // Call three times :
-    // - when the user click (-> progressBar or nothing)
-    // - when the data is loaded (-> intent or nothing)
-    // - when the ads is closed (-> intent or progressBar)
     public void launchActivity() {
         // No ads currently displayed
         if (!mAdsOnScreen) {
@@ -115,8 +111,7 @@ public class MainActivityFragment extends Fragment implements OnTaskCompleted {
 
     // Request new interstitial
     private void requestNewInterstitial() {
-        // Create an ad request. Check logcat output for the hashed device ID to
-        // get test ads on a physical device. e.g.
+
         AdRequest adRequest = new AdRequest.Builder()
                 .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
                 .build();
